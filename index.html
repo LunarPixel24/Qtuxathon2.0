@@ -237,6 +237,8 @@
         </div>
     </nav>
 
+    <!-- Countdown -->
+
     <div class="masthead">
         <div class="container d-flex h-100 align-items-center">
             <div class="mx-auto text-center no-select">
@@ -246,11 +248,48 @@
                 <br>
                 <h2 class="white mx-auto mt-2 mb-3 sub-heading" style="width: 100%;">Sri Sairam Institute Of Technology</h2>
                 <div id="button-box">
+                <!-- gform apply link here -->
                     <a href="" class="btn btn-primary js-scroll-trigger" style="z-index: 1; position: relative;">Apply Now!</a>
                 </div>
             </div>
         </div>
     </div>
+
+    
+    <div class="countdown-container">
+        <h2>⏳ Countdown to QTuxathon!</h2>
+        <div id="countdown">
+          <span id="days">00</span>d :
+          <span id="hours">00</span>h :
+          <span id="minutes">00</span>m :
+          <span id="seconds">00</span>s
+          <script>
+            
+            const eventDate = new Date("2025-04-28T09:00:00").getTime();
+          
+            const countdownFunc = setInterval(function () {
+              const now = new Date().getTime();
+              const distance = eventDate - now;
+          
+              const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+              const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+              document.getElementById("days").innerText = String(days).padStart(2, '0');
+              document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+              document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+              document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+          
+              if (distance < 0) {
+                clearInterval(countdownFunc);
+                document.getElementById("countdown").innerHTML = "🎉 It's Hackathon Time!";
+              }
+            }, 1000);
+          </script>
+          
+        </div>
+      </div>
 
     <section class="text-center">
         <!-- About Section -->
@@ -383,6 +422,9 @@
         </section>
          -->
 
+
+          
+
         
 
 
@@ -401,7 +443,7 @@
                 <div class="small text-center white">
                     <div class="social d-flex justify-content-center"></div>
                     <div class="white mb-4 nexa">
-                        Copyright © QTuxathon2.0 2025
+                        Copyright © QTuxathon2.0 2024
                     </div>
                 </div>
             </div>
